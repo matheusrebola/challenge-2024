@@ -19,7 +19,6 @@ A API oferece os seguintes endpoints para consulta de produtos:
 A especificação da API é descrita no arquivo `api-spec.yaml`, seguindo o padrão OpenAPI 3.0.0. Este arquivo define os endpoints disponíveis, os parâmetros necessários, os tipos de resposta e outras informações relevantes para o uso da API.
 
 ## Tecnologias Utilizadas
-# Tecnologias Utilizadas
 <br>[![SkillIcons](https://skillicons.dev/icons?i=java,aws,spring,mongo,docker,kafka,sass)](https://skillicons.dev)<br/>
 
 ## Como Executar o Projeto
@@ -27,8 +26,5 @@ A especificação da API é descrita no arquivo `api-spec.yaml`, seguindo o padr
 2. Certifique-se de ter o Java 21 e o Maven instalados.
 3. Navegue até o diretório raiz do projeto e execute `mvn spring-boot:run`.
 4. Acesse a documentação da API em `http://localhost:8080/swagger-ui.html`.
-
-## Autores
-Este projeto foi desenvolvido por [Matheus Rebola].
 
 ---
