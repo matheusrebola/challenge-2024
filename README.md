@@ -20,7 +20,7 @@ A especificação da API é descrita no arquivo `api-spec.yaml`, seguindo o padr
 
 ## Tecnologias Utilizadas
 # Tecnologias Utilizadas
-<br>[![SkillIcons](https://skillicons.dev/icons?i=java,aws,spring,mongo,docker,swagger,kafka)](https://skillicons.dev)<br/>
+<br>[![SkillIcons](https://skillicons.dev/icons?i=java,aws,spring,mongo,docker,kafka,sass)](https://skillicons.dev)<br/>
 
 ## Como Executar o Projeto
 1. Clone o repositório para sua máquina local.
