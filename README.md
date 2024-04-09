@@ -2,10 +2,10 @@ Claro! Abaixo está um exemplo de um README.md para o projeto descrito com base 
 
 ---
 
-# Sistema de Gerenciamento de Produtos - Vivo
+# Sistema de Gerenciamento de Produtos - Challenge FIAP 2024
 
 ## Descrição do Projeto
-O Sistema de Gerenciamento de Produtos é uma plataforma desenvolvida para a Vivo que permite aos usuários acessarem informações sobre os produtos disponíveis, incluindo telefonia móvel, internet, TV por assinatura, entre outros. O sistema fornece uma API RESTful para consulta de produtos por usuário e oferece uma variedade de funcionalidades, incluindo listagem de produtos, detalhes do produto e preços associados.
+O Sistema de Gerenciamento de Produtos é uma plataforma que permite aos usuários acessarem informações sobre os produtos disponíveis. O sistema fornece uma API RESTful para consulta de produtos por usuário e oferece uma variedade de funcionalidades, incluindo listagem de produtos, detalhes do produto e preços associados.
 
 ## Arquitetura
 O projeto é desenvolvido com base em uma arquitetura de microsserviços, utilizando tecnologias como Spring Boot, Spring Integration, Apache Kafka e MongoDB. Os microsserviços são responsáveis por capturar dados dos sistemas legados, normalizá-los, armazená-los em um banco de dados canônico e fornecer acesso aos dados através de uma API.
