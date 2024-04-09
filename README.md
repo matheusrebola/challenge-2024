@@ -1,5 +1,3 @@
-Claro! Abaixo está um exemplo de um README.md para o projeto descrito com base na arquitetura e no arquivo YAML fornecido:
-
 ---
 
 # Sistema de Gerenciamento de Produtos - Challenge FIAP 2024
