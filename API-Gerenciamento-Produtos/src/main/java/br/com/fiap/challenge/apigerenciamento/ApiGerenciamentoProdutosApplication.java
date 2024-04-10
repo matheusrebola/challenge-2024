@@ -1,13 +1,13 @@
-package br.com.fiap.challenge;
+package br.com.fiap.challenge.apigerenciamento;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class Application {
+public class ApiGerenciamentoProdutosApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(Application.class, args);
+		SpringApplication.run(ApiGerenciamentoProdutosApplication.class, args);
 	}
 
 }

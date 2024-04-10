@@ -1,10 +1,10 @@
-package br.com.fiap.challenge;
+package br.com.fiap.challenge.apigerenciamento;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ApplicationTests {
+class ApiGerenciamentoProdutosApplicationTests {
 
 	@Test
 	void contextLoads() {
