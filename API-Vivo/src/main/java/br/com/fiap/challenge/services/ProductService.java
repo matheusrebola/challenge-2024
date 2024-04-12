@@ -8,9 +8,11 @@ import java.util.Arrays;
 
 @Service
 @RequiredArgsConstructor
-public class ProductService {
+public class ProductService implements Product {
 
     private final ProductRepository productRepository;
+    
+    @Override
     public boolean exists(long id) {
         return false;
     }
@@ -18,4 +20,5 @@ public class ProductService {
     public Arrays findByUser(long id) {
         return null;
     }
+
 }
