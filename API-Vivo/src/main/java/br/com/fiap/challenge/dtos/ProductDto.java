@@ -11,6 +11,6 @@ public record ProductDto(
         ProductType productType,
         Description descriptions,
         SubscriptionType subscriptionType,
-        List<String> tags
+        String tags
 ) {
 }
