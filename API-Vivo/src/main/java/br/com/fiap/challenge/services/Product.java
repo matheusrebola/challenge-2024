@@ -1,4 +1,7 @@
 package br.com.fiap.challenge.services;
 
-public interface ProductInterface {
+public interface Product {
+    
+    public boolean exists(long id);
+
 }

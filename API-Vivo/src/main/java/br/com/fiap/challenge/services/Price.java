@@ -1,4 +1,4 @@
 package br.com.fiap.challenge.services;
 
-public interface PriceInterface {
+public interface Price {
 }
