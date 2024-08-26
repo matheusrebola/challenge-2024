@@ -5,6 +5,9 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;
 
+import challenge.vivo.orchestrator_service.core.service.OrchestrationService;
+import challenge.vivo.orchestrator_service.core.utils.JsonUtils;
+
 
 @Slf4j
 @Component
@@ -12,7 +15,7 @@ import org.springframework.stereotype.Component;
 public class SagaOrchestratorConsumer {
     
     private final OrchestrationService service;
-    private final JsonUtil jsonUtil;
+    private final JsonUtils jsonUtil;
 
     @KafkaListener(
         groupId = "${spring.kafka.consumer.group-id}",

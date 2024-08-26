@@ -1,12 +1,13 @@
 package challenge.vivo.orchestrator_service.core.utils;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+
+import challenge.vivo.orchestrator_service.core.dto.Event;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
 
 @Component
 @AllArgsConstructor
-
 public class JsonUtils {
    private final ObjectMapper objectMapper;
 

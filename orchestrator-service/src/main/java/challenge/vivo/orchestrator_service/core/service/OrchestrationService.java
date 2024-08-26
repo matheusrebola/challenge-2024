@@ -4,6 +4,11 @@ import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+import challenge.vivo.orchestrator_service.core.dto.Event;
+import challenge.vivo.orchestrator_service.core.producer.SagaOrchestratorProducer;
+import challenge.vivo.orchestrator_service.core.saga.SagaExecutionController;
+import challenge.vivo.orchestrator_service.core.utils.JsonUtils;
+
 import java.time.LocalDateTime;
 
 @Slf4j
@@ -12,7 +17,7 @@ import java.time.LocalDateTime;
 public class OrchestrationService {
 
     private final SagaOrchestratorProducer producer;
-    private final JsonUtil jsonUtil;
+    private final JsonUtils jsonUtil;
     private final SagaExecutionController sagaExecutionController;
 
     public void startSaga(Event event) {

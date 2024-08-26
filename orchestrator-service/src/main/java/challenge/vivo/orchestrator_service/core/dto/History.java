@@ -7,6 +7,9 @@ import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
+import challenge.vivo.orchestrator_service.core.enums.EEventSource;
+import challenge.vivo.orchestrator_service.core.enums.ESagaStatus;
+
 @Data
 @Builder
 @NoArgsConstructor
