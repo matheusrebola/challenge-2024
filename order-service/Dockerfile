@@ -1,9 +1,4 @@
-services:
-  mongodb:
-    image: 'mongo:latest'
-    environment:
-      - 'MONGO_INITDB_DATABASE=mydatabase'
-      - 'MONGO_INITDB_ROOT_PASSWORD=secret'
-      - 'MONGO_INITDB_ROOT_USERNAME=root'
-    ports:
-      - '27017'
+FROM openjdk:17-alpine
+COPY build/libs/*.jar app.jar
+EXPOSE 3000
+ENTRYPOINT ["java", "-jar", "app.jar"]
