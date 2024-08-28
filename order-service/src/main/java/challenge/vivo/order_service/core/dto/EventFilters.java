@@ -1,5 +1,13 @@
 package challenge.vivo.order_service.core.dto;
 
-public class EventFilters {
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class EventFilters {
+	private String orderId;
+    private String transactionId;
 }
