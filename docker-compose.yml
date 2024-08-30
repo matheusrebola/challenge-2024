@@ -2,9 +2,9 @@ version: '3'
 
 services:
   
-  gateway-db:
+  description-db:
     image: mongo:latest
-    container_name: gateway-db
+    container_name: description-db
     restart: always
     networks:
       - orchestrator-saga
@@ -38,9 +38,9 @@ services:
     ports:
       - 27010:27012
   
-  user-db:
+  order-db:
     image: mongo:latest
-    container_name: user-db
+    container_name: order-db
     restart: always
     networks:
       - orchestrator-saga
@@ -49,6 +49,19 @@ services:
       - MONGO_INITDB_ROOT_PASSWORD=123456
     ports:
       - 27010:27013
+      
+  vivo-db:
+    container_name: vivo-db
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: vivo-db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      PGDATA: /data/postgres
+    networks:
+      - orchestrator-saga
+    ports:
+      - "5432:5432"
 
   kafka:
     container_name: kafka
@@ -154,7 +167,7 @@ services:
       - MONGO_DB_URI=mongodb://admin:123456@price-db:27012
     ports:
       - 8091:8091
-
+      
   description-service:
     build: './description-service'
     container_name: description-service
@@ -168,6 +181,24 @@ services:
       - MONGO_DB_URI=mongodb://admin:123456@description-db:27013
     ports:
       - 8092:8092
+  
+   vivo-api:
+    build: './vivo-api'
+    container_name: vivo-api
+    depends_on:
+      - vivo-db
+    networks:
+      - orchestrator-saga
+    environment:
+      - KAFKA_BROKER=kafka:29092
+      - DB_HOST=vivo-db
+      - DB_PORT=5432
+      - DB_NAME=vivo-db
+      - DB_USER=postgres
+      - DB_PASSWORD=postgres
+    ports:
+      - 8070:8070
+ 
 
 networks:
   orchestrator-saga:
