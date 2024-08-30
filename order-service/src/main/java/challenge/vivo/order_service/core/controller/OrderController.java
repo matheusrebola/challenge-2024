@@ -1,4 +1,4 @@
-package challenge.vivo.order_service.controller;
+package challenge.vivo.order_service.core.controller;
 
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

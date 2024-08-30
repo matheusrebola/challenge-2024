@@ -1,4 +1,4 @@
-package challenge.vivo.order_service.controller;
+package challenge.vivo.order_service.core.controller;
 
 import java.util.List;
 
