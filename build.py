@@ -32,6 +32,8 @@ def build_all_applications():
                      args={"product-validation-service"}).start()
     threading.Thread(target=build_application,
                      args={"price-service"}).start()
+    threading.Thread(target=build_application,
+                     args={"vivo-api"}).start()
 
 def remove_remaining_containers():
     print("Removing all containers.")
