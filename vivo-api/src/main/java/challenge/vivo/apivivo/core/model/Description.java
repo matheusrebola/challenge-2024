@@ -1,5 +1,7 @@
 package challenge.vivo.apivivo.core.model;
 
-public record Description() {
+@Entity
+public record Description(
+	@Id @GeneratedValue(strategy = GenerationType.UUID) UUID id) {
 
 }
