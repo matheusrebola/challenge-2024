@@ -1,5 +1,6 @@
 package challenge.vivo.apivivo.core.repository;
 
-public interface DescriptionRepository {
+@Repository
+public interface DescriptionRepository JpaRepository<Description, UUID> {{
 
 }
