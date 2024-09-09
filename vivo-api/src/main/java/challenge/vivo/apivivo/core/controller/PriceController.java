@@ -2,11 +2,20 @@ package challenge.vivo.apivivo.core.controller;
 
 import java.util.List;
 import java.util.stream.Collectors;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
-import lombok.RequiredArgsConstructor;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
+import challenge.vivo.apivivo.core.mapper.PriceMapper;
+import challenge.vivo.apivivo.core.mapper.ProductMapper;
+import challenge.vivo.apivivo.core.service.PriceService;
+import challenge.vivo.apivivo.core.service.ProductService;
+import challenge.vivo.apivivo.core.dto.PriceDto;
+import lombok.RequiredArgsConstructor;
 
 @RestController
 @RequestMapping("/price")

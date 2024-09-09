@@ -5,6 +5,13 @@ import java.util.stream.Collectors;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import challenge.vivo.apivivo.core.mapper.DescriptionMapper;
+import challenge.vivo.apivivo.core.model.Description;
+import challenge.vivo.apivivo.core.service.DescriptionService;
+import challenge.vivo.apivivo.core.dto.DescriptionDto;
+import challenge.vivo.apivivo.core.dto.DescriptionCreateDto;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 
 @RestController
