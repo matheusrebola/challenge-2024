@@ -2,6 +2,13 @@ package challenge.vivo.apivivo.core.mapper;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
+
+import challenge.vivo.apivivo.core.dto.ProductCreateDto;
+import challenge.vivo.apivivo.core.dto.ProductDto;
+import challenge.vivo.apivivo.core.model.Product;
+import challenge.vivo.apivivo.core.dto.ProductCreateDto;
+import challenge.vivo.apivivo.core.dto.ProductDto;
+
 import lombok.RequiredArgsConstructor;
 
 @Component

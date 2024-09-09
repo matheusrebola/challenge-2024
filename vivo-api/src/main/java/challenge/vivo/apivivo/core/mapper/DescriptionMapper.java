@@ -1,7 +1,13 @@
 package challenge.vivo.apivivo.core.mapper;
 
+import java.time.Instant;
+
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
+
+import challenge.vivo.apivivo.core.model.Description;
+import challenge.vivo.apivivo.core.dto.DescriptionCreateDto;
+import challenge.vivo.apivivo.core.dto.DescriptionDto;
 import lombok.RequiredArgsConstructor;
 
 @Component
