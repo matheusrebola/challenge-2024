@@ -1,5 +1,11 @@
 package challenge.vivo.apivivo.core.dto;
 
-public record DescriptionCreateDto() {
+import challenge.vivo.apivivo.core.enum.Category;
+
+public record DescriptionCreateDto(
+    String text,
+	String url,
+	Category category
+) {
 
 }
