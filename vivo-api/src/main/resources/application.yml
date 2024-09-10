@@ -1,16 +1,6 @@
 server:
   port: 8070
 
-spring:
-  kafka:
-    bootstrap-servers: ${KAFKA_BROKER:kafka:29092} 
-    topic:
-      start-saga: start-saga
-      notify-ending: notify-ending
-    consumer:
-      group-id: vivo-group 
-      auto-offset-reset: latest
-
   datasource:
     url: jdbc:postgresql://${DB_HOST:vivo-db}:${DB_PORT:5432}/${DB_NAME:vivo-db}
     username: ${DB_USER:postgres}
