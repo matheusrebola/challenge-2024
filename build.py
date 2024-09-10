@@ -20,20 +20,20 @@ def docker_compose_up():
 
 def build_all_applications():
     print("Starting to build applications!")
-    threading.Thread(target=build_application,
-                     args={"auth-service"}).start()
-    threading.Thread(target=build_application,
-                     args={"description-service"}).start()
-    threading.Thread(target=build_application,
-                     args={"order-service"}).start()
-    threading.Thread(target=build_application,
-                     args={"orchestrator-service"}).start()
-    threading.Thread(target=build_application,
-                     args={"product-validation-service"}).start()
-    threading.Thread(target=build_application,
-                     args={"price-service"}).start()
-    threading.Thread(target=build_application,
-                     args={"vivo-api"}).start()
+    applications = [
+        "auth-service",
+        "description-service",
+        "order-service",
+        "orchestrator-service",
+        "product-validation-service",
+        "price-service",
+        "vivo-api"
+    ]
+    for app in applications:
+        thread = threading.Thread(target=build_application, args=(app,))
+        thread.start()
+        thread.join()  # Aguarda o término de cada thread
+
 
 def remove_remaining_containers():
     print("Removing all containers.")
@@ -51,7 +51,6 @@ def remove_remaining_containers():
 if __name__ == "__main__":
     print("Pipeline started!")
     build_all_applications()
-    while len(threads) > 0:
-        pass
     remove_remaining_containers()
     threading.Thread(target=docker_compose_up).start()
+
