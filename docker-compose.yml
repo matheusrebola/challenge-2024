@@ -12,8 +12,8 @@ services:
       - MONGO_INITDB_ROOT_USERNAME=admin
       - MONGO_INITDB_ROOT_PASSWORD=123456
     ports:
-      - 27010:27010
-  
+      - 27010:27017  # Porta corrigida
+
   product-db:
     image: mongo:latest
     container_name: product-db
@@ -24,10 +24,10 @@ services:
       - MONGO_INITDB_ROOT_USERNAME=admin
       - MONGO_INITDB_ROOT_PASSWORD=123456
     ports:
-      - 27010:27011
-  
+      - 27011:27017  # Porta corrigida
+
   price-db:
-   image: mongo:latest
+    image: mongo:latest
     container_name: price-db
     restart: always
     networks:
@@ -36,8 +36,8 @@ services:
       - MONGO_INITDB_ROOT_USERNAME=admin
       - MONGO_INITDB_ROOT_PASSWORD=123456
     ports:
-      - 27010:27012
-  
+      - 27012:27017  # Porta corrigida
+
   order-db:
     image: mongo:latest
     container_name: order-db
@@ -48,8 +48,8 @@ services:
       - MONGO_INITDB_ROOT_USERNAME=admin
       - MONGO_INITDB_ROOT_PASSWORD=123456
     ports:
-      - 27010:27013
-      
+      - 27013:27017  # Porta corrigida
+
   vivo-db:
     container_name: vivo-db
     image: postgres:latest
@@ -74,7 +74,7 @@ services:
       - orchestrator-saga
     environment:
       KAFKA_LISTENERS: "INTERNAL://:29092,EXTERNAL://:9092"
-      KAFKA_ADVERTISED_LISTENERS: "INTERNAL://kafka:29092,EXTERNAL://localhost:9092"
+      KAFKA_ADVERTISED_LISTENERS: "EXTERNAL://kafka:9092"
       KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: "INTERNAL:PLAINTEXT,EXTERNAL:PLAINTEXT"
       KAFKA_INTER_BROKER_LISTENER_NAME: "INTERNAL"
       KAFKA_ZOOKEEPER_SESSION_TIMEOUT: "6000"
@@ -100,7 +100,7 @@ services:
         kafka:
           brokers: ["kafka:29092"]
     depends_on:
-      - "kafka"
+      - kafka
 
   order-service:
     build: './order-service'
@@ -112,7 +112,7 @@ services:
       - orchestrator-saga
     environment:
       - KAFKA_BROKER=kafka:29092
-      - MONGO_DB_URI=mongodb://admin:123456@order-db:27010
+      - MONGO_DB_URI=mongodb://admin:123456@order-db:27013
     ports:
       - 3000:3000
 
@@ -149,8 +149,8 @@ services:
     networks:
       - orchestrator-saga
     environment:
-     - KAFKA_BROKER=kafka:29092
-     - MONGO_DB_URI=mongodb://admin:123456@product-db:27011
+      - KAFKA_BROKER=kafka:29092
+      - MONGO_DB_URI=mongodb://admin:123456@product-db:27011
     ports:
       - 8093:8093
 
@@ -167,7 +167,7 @@ services:
       - MONGO_DB_URI=mongodb://admin:123456@price-db:27012
     ports:
       - 8091:8091
-      
+
   description-service:
     build: './description-service'
     container_name: description-service
@@ -178,11 +178,11 @@ services:
       - orchestrator-saga
     environment:
       - KAFKA_BROKER=kafka:29092
-      - MONGO_DB_URI=mongodb://admin:123456@description-db:27013
+      - MONGO_DB_URI=mongodb://admin:123456@description-db:27010
     ports:
       - 8092:8092
-  
-   vivo-api:
+
+  vivo-api:
     build: './vivo-api'
     container_name: vivo-api
     depends_on:
@@ -198,7 +198,6 @@ services:
       - DB_PASSWORD=postgres
     ports:
       - 8070:8070
- 
 
 networks:
   orchestrator-saga:
