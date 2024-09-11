@@ -1,4 +1,4 @@
-package challenge.vivo.description_service;
+package challenge.vivo.descriptionservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
