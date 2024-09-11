@@ -1,8 +1,7 @@
 package challenge.vivo.apivivo.core.model;
 
 import java.util.UUID;
-
-import challenge.vivo.apivivo.core.enum.Category;
+import challenge.vivo.apivivo.core.enums.Category;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
