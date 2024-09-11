@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+import challenge.vivo.order_service.config.exception.ValidationException;
 import challenge.vivo.order_service.core.document.Event;
 import challenge.vivo.order_service.core.dto.EventFilters;
 import challenge.vivo.order_service.core.repository.EventRepository;
