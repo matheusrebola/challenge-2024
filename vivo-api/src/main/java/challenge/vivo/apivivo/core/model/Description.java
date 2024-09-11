@@ -9,10 +9,8 @@ import jakarta.persistence.Id;
 
 @Entity
 public record Description(
-	@Id @GeneratedValue(strategy = GenerationType.UUID) UUID id,
-	String text,
-	String url,
-	Category category)
-	{
-	
-}
+    @Id @GeneratedValue(strategy = GenerationType.UUID) UUID id,
+    String text,
+    String url,
+    Category category
+) {}
