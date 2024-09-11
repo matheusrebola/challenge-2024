@@ -14,8 +14,8 @@ public class PriceMapper {
 
 	private final ModelMapper modelMapper;
 
-	public PriceDTO map(Price price) {
-		PriceDTO dto = modelMapper.map(cliente, PriceDTO.class);
+	public PriceDto map(Price price) {
+		PriceDto dto = modelMapper.map(price, PriceDto.class);
 		return dto;
 	}
 }

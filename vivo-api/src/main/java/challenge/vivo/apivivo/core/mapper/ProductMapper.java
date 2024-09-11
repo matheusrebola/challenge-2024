@@ -6,8 +6,6 @@ import org.springframework.stereotype.Component;
 import challenge.vivo.apivivo.core.dto.ProductCreateDto;
 import challenge.vivo.apivivo.core.dto.ProductDto;
 import challenge.vivo.apivivo.core.model.Product;
-import challenge.vivo.apivivo.core.dto.ProductCreateDto;
-import challenge.vivo.apivivo.core.dto.ProductDto;
 
 import lombok.RequiredArgsConstructor;
 
@@ -18,12 +16,12 @@ public class ProductMapper {
 	private final ModelMapper modelMapper;
 	
 	public Product map(ProductCreateDto dto) {
-		Product acesso = modelMapper.map(dto, Product.class);
-		return acesso;
+		Product product = modelMapper.map(dto, Product.class);
+		return product;
 	}
 	
-	public ProductDto map(Product acesso) {
-		ProductDto dto = modelMapper.map(acesso, ProductDto.class);
+	public ProductDto map(Product product) {
+		ProductDto dto = modelMapper.map(product, ProductDto.class);
 		return dto;
 	}
 }

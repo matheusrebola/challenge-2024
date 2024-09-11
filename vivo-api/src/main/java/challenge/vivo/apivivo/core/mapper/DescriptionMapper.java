@@ -1,7 +1,5 @@
 package challenge.vivo.apivivo.core.mapper;
 
-import java.time.Instant;
-
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
 
@@ -16,14 +14,13 @@ public class DescriptionMapper {
 
 	private final ModelMapper modelMapper;
 
-	public Description map(DescriptionCreateDTO dto) {
+	public Description map(DescriptionCreateDto dto) {
 		Description description = modelMapper.map(dto, Description.class);
-		description.setDataCadastro(Instant.now());
 		return description;
 	}
 
-	public DescriptionDTO map(Description description) {
-		DescriptionDTO dto = modelMapper.map(cliente, DescriptionDTO.class);
+	public DescriptionDto map(Description description) {
+		DescriptionDto dto = modelMapper.map(description, DescriptionDto.class);
 		return dto;
 	}
 }
