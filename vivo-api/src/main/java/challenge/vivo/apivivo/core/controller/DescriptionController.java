@@ -2,6 +2,8 @@ package challenge.vivo.apivivo.core.controller;
 
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.UUID;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -23,32 +25,33 @@ public class DescriptionController {
 	private final DescriptionMapper descriptionMapper;
 
 	@GetMapping
-    public ResponseEntity<List<DescriptionDTO>> getAll() {
+    public ResponseEntity<List<DescriptionDto>> getAll() {
 
-        List<DescriptionDTO> result = descriptionService.getAll().stream().map(descriptionMapper::map).collect(Collectors.toList());
+        List<DescriptionDto> result = descriptionService.getAll().stream().map(descriptionMapper::map).collect(Collectors.toList());
 
         return new ResponseEntity<>(result, HttpStatus.OK);
     }
 
 	@PostMapping
-    public ResponseEntity<DescriptionDTO> create(@Valid @RequestBody DescriptionCreateDTO requestDto) {
+    public ResponseEntity<DescriptionDto> create(@Valid @RequestBody DescriptionCreateDto requestDto) {
 
         Description description = descriptionMapper.map(requestDto);
 
         Description descriptionSaved = descriptionService.save(description);
 
-        DescriptionDTO responseDto = descriptionMapper.map(descriptionSaved);
+        DescriptionDto responseDto = descriptionMapper.map(descriptionSaved);
         return new ResponseEntity<>(responseDto, HttpStatus.CREATED);
     }
 
-	@GetMapping("{id}")
-    public ResponseEntity<DescriptionDTO> findById(@PathVariable long id) {
+    @GetMapping("{id}")
+    public ResponseEntity<DescriptionDto> findById(@PathVariable UUID id) {
         if (!descriptionService.exists(id)) {
             return ResponseEntity.notFound().build();
         }
 
-        DescriptionDTO dto = descriptionMapper.map(descriptionService.findById(id));
+        DescriptionDto dto = descriptionMapper.map(descriptionService.findById(id));
 
         return new ResponseEntity<>(dto, HttpStatus.OK);
     }
+
 }
