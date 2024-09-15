@@ -1,14 +1,16 @@
 package challenge.vivo.productservice.core.dto;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
 import challenge.vivo.productservice.core.enums.ESagaStatus;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import static org.springframework.util.ObjectUtils.isEmpty;
 
 @Data
 @Builder
