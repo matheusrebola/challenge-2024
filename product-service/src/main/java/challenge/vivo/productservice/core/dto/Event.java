@@ -1,5 +1,6 @@
 package challenge.vivo.productservice.core.dto;
 
+<<<<<<< HEAD
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -16,21 +17,8 @@ import static org.springframework.util.ObjectUtils.isEmpty;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+=======
+>>>>>>> parent of 753531d (feat: configuração padrão do projeto)
 public class Event {
 
-    private String id;
-    private String orderId;
-    private String transactionId;
-    private Order payload;
-    private String source;
-    private ESagaStatus status;
-    private List<History> eventHistory;
-    private LocalDateTime createdAt;
-
-    public void addToHistory(History history) {
-        if (isEmpty(eventHistory)) {
-            eventHistory = new ArrayList<>();
-        }
-        eventHistory.add(history);
-    }
 }
