@@ -1,9 +1,10 @@
 package challenge.vivo.apivivo.core.dto;
 
 import java.util.UUID;
-import challenge.vivo.apivivo.core.enums.ProductType;
-import challenge.vivo.apivivo.core.enums.SubscriptionType;
+
 import challenge.vivo.apivivo.core.model.Description;
+import challenge.vivo.descriptionservice.core.enums.ProductType;
+import challenge.vivo.descriptionservice.core.enums.SubscriptionType;
 
 public record ProductDto(
     UUID id,

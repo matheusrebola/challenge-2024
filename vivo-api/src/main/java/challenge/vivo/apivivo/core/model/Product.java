@@ -2,8 +2,9 @@ package challenge.vivo.apivivo.core.model;
 
 import java.util.List;
 import java.util.UUID;
-import challenge.vivo.apivivo.core.enums.ProductType;
-import challenge.vivo.apivivo.core.enums.SubscriptionType;
+
+import challenge.vivo.descriptionservice.core.enums.ProductType;
+import challenge.vivo.descriptionservice.core.enums.SubscriptionType;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;
