@@ -1,4 +1,4 @@
-version: '3'
+version: '3.8'
 
 services:
   
@@ -81,6 +81,9 @@ services:
       KAFKA_RESTART_ATTEMPTS: "10"
       KAFKA_RESTART_DELAY: "5"
       ZOOKEEPER_AUTOPURGE_PURGE_INTERVAL: "0"
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
     volumes:
       - ./data/kafka/data:/var/lib/kafka/data
 
@@ -198,6 +201,31 @@ services:
       - DB_PASSWORD=postgres
     ports:
       - 8070:8070
+
+  zookeeper:
+    image: confluentinc/cp-zookeeper:7.0.1
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+
+  debezium:
+    image: debezium/connect:1.7
+    ports:
+      - "8083:8083"
+    environment:
+      BOOTSTRAP_SERVERS: kafka:9092
+      GROUP_ID: 1
+      CONFIG_STORAGE_TOPIC: debezium_config
+      OFFSET_STORAGE_TOPIC: debezium_offset
+      STATUS_STORAGE_TOPIC: debezium_status
+    depends_on:
+      - kafka
+      - postgres
+    debezium-initializer:
+    command: [ "sh", "-c", "sleep 20 && /create-connector.sh" ]
+    volumes:
+      - ./create-connector.sh:/create-connector.sh
+
 
 networks:
   orchestrator-saga:
