@@ -1,4 +1,4 @@
-package challenge.vivo.orchestrator_service.core.saga;
+package challenge.vivo.orchestratorservice.core.saga;
 
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -7,11 +7,11 @@ import java.util.Arrays;
 
 import org.springframework.stereotype.Component;
 
-import challenge.vivo.orchestrator_service.config.exception.ValidationException;
-import challenge.vivo.orchestrator_service.core.enums.ETopics;
-import challenge.vivo.orchestrator_service.core.dto.Event;
-import static challenge.vivo.orchestrator_service.core.saga.SagaHandler.*;
+import challenge.vivo.orchestratorservice.config.exception.ValidationException;
+import challenge.vivo.orchestratorservice.core.dto.Event;
+import challenge.vivo.orchestratorservice.core.enums.ETopics;
 
+import static challenge.vivo.orchestratorservice.core.saga.SagaHandler.*;
 import static java.lang.String.format;
 import static org.springframework.util.ObjectUtils.isEmpty;
 

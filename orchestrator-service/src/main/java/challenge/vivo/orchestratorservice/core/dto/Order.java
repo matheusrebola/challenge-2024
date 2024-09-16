@@ -1,4 +1,4 @@
-package challenge.vivo.orchestrator_service.core.dto;
+package challenge.vivo.orchestratorservice.core.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

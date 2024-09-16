@@ -1,4 +1,4 @@
-package challenge.vivo.orchestrator_service.core.enums;
+package challenge.vivo.orchestratorservice.core.enums;
 
 public enum ESagaStatus {
     SUCCESS,

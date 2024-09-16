@@ -1,21 +1,22 @@
-package challenge.vivo.orchestrator_service.core.service;
+package challenge.vivo.orchestratorservice.core.service;
 
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+
+import static challenge.vivo.orchestratorservice.core.enums.EEventSource.ORCHESTRATOR;
+import static challenge.vivo.orchestratorservice.core.enums.ESagaStatus.FAIL;
+import static challenge.vivo.orchestratorservice.core.enums.ESagaStatus.SUCCESS;
 
 import java.time.LocalDateTime;
 
 import org.springframework.stereotype.Service;
 
-import challenge.vivo.orchestrator_service.core.dto.Event;
-import challenge.vivo.orchestrator_service.core.dto.History;
-import challenge.vivo.orchestrator_service.core.enums.ETopics;
-import challenge.vivo.orchestrator_service.core.producer.SagaOrchestratorProducer;
-import challenge.vivo.orchestrator_service.core.saga.SagaExecutionController;
-import challenge.vivo.orchestrator_service.core.utils.JsonUtils;
-import static challenge.vivo.orchestrator_service.core.enums.EEventSource.ORCHESTRATOR;
-import static challenge.vivo.orchestrator_service.core.enums.ESagaStatus.FAIL;
-import static challenge.vivo.orchestrator_service.core.enums.ESagaStatus.SUCCESS;
+import challenge.vivo.orchestratorservice.core.dto.Event;
+import challenge.vivo.orchestratorservice.core.dto.History;
+import challenge.vivo.orchestratorservice.core.enums.ETopics;
+import challenge.vivo.orchestratorservice.core.producer.SagaOrchestratorProducer;
+import challenge.vivo.orchestratorservice.core.saga.SagaExecutionController;
+import challenge.vivo.orchestratorservice.core.utils.JsonUtils;
 
 @Slf4j
 @Service

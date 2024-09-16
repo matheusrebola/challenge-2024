@@ -1,4 +1,4 @@
-package challenge.vivo.orchestrator_service.config.kakfa;
+package challenge.vivo.orchestratorservice.config.kakfa;
 
 import lombok.RequiredArgsConstructor;
 import org.apache.kafka.clients.admin.NewTopic;
@@ -13,10 +13,10 @@ import org.springframework.kafka.annotation.EnableKafka;
 import org.springframework.kafka.config.TopicBuilder;
 import org.springframework.kafka.core.*;
 
+import static challenge.vivo.orchestratorservice.core.enums.ETopics.*;
+
 import java.util.HashMap;
 import java.util.Map;
-
-import static challenge.vivo.orchestrator_service.core.enums.ETopics.*;
 
 @EnableKafka
 @Configuration

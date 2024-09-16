@@ -1,12 +1,12 @@
-package challenge.vivo.orchestrator_service.core.consumer;
+package challenge.vivo.orchestratorservice.core.consumer;
 
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;
 
-import challenge.vivo.orchestrator_service.core.service.OrchestrationService;
-import challenge.vivo.orchestrator_service.core.utils.JsonUtils;
+import challenge.vivo.orchestratorservice.core.service.OrchestrationService;
+import challenge.vivo.orchestratorservice.core.utils.JsonUtils;
 
 @Slf4j
 @Component

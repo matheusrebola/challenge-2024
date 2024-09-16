@@ -1,4 +1,4 @@
-package challenge.vivo.orchestrator_service.config.exception;
+package challenge.vivo.orchestratorservice.config.exception;
 
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.http.HttpStatus;

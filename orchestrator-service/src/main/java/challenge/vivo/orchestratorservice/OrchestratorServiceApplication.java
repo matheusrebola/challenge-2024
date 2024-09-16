@@ -1,4 +1,4 @@
-package challenge.vivo.orchestrator_service;
+package challenge.vivo.orchestratorservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

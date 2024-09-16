@@ -1,8 +1,8 @@
-package challenge.vivo.orchestrator_service.core.utils;
+package challenge.vivo.orchestratorservice.core.utils;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import challenge.vivo.orchestrator_service.core.dto.Event;
+import challenge.vivo.orchestratorservice.core.dto.Event;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
 

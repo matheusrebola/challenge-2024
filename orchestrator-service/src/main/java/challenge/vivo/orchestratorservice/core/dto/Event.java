@@ -1,4 +1,4 @@
-package challenge.vivo.orchestrator_service.core.dto;
+package challenge.vivo.orchestratorservice.core.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,8 +9,8 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-import challenge.vivo.orchestrator_service.core.enums.EEventSource;
-import challenge.vivo.orchestrator_service.core.enums.ESagaStatus;
+import challenge.vivo.orchestratorservice.core.enums.EEventSource;
+import challenge.vivo.orchestratorservice.core.enums.ESagaStatus;
 
 import static org.springframework.util.ObjectUtils.isEmpty;
 
