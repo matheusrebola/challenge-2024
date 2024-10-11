@@ -37,7 +37,7 @@ public class DescriptionService {
 	}
 
 	//métodos default
-	public Description findByCategoria(Category category){
+	public List<Description> findByCategoria(Category category){
 		return descriptionRepository.findByCategoria(category);
 	}
 	public Description findByUrl(String url){
