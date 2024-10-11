@@ -34,4 +34,25 @@ public class ProductService {
 	public void delete(Product product) {
 		productRepository.delete(product);
 	}
+
+	//metodos default
+	public List<Product> findByProductName(String productName){
+		return productRepository.findByProductName(productName);
+	}
+
+    public List<Product> findByProductType(ProductType productType){
+		return productRepository.findByProductType(productType);
+	}
+
+    public List<Product> findByDescription(Description description){
+		return productRepository.findByDescription(description);
+	}
+
+    public List<Product> findBySubscriptionType(SubscriptionType subscriptionType){
+		return productRepository.findBySubscriptionType(subscriptionType);
+	}
+
+    public List<Product> findByPrice(Price price){
+		return productRepository.findByPrice(price);
+	}
 }

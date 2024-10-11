@@ -5,6 +5,7 @@ import java.util.UUID;
 
 import org.springframework.stereotype.Service;
 
+import challenge.vivo.apivivo.core.enums.Category;
 import challenge.vivo.apivivo.core.model.Description;
 import challenge.vivo.apivivo.core.repository.DescriptionRepository;
 import lombok.RequiredArgsConstructor;
@@ -33,5 +34,13 @@ public class DescriptionService {
 	
 	public void delete(Description description) {
 		descriptionRepository.delete(description);
+	}
+
+	//métodos default
+	public Description findByCategoria(Category category){
+		return descriptionRepository.findByCategoria(category);
+	}
+	public Description findByUrl(String url){
+		return descriptionRepository.findByUrl(url);
 	}
 }
