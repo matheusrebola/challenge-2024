@@ -5,7 +5,9 @@ import java.util.UUID;
 
 import org.springframework.stereotype.Service;
 
+import challenge.vivo.apivivo.core.enums.ProductType;
 import challenge.vivo.apivivo.core.enums.SubscriptionType;
+import challenge.vivo.apivivo.core.model.Description;
 import challenge.vivo.apivivo.core.model.Price;
 import challenge.vivo.apivivo.core.model.Product;
 import challenge.vivo.apivivo.core.repository.ProductRepository;
@@ -37,35 +39,24 @@ public class ProductService {
 		productRepository.delete(product);
 	}
 
-<<<<<<< HEAD
-=======
 	//metodos default
->>>>>>> refs/remotes/origin/master
 	public List<Product> findByProductName(String productName){
 		return productRepository.findByProductName(productName);
 	}
 
-<<<<<<< HEAD
 	public List<Product> findBySubscriptionType(SubscriptionType subscriptionType){
 		return productRepository.findBySubscriptionType(subscriptionType);
 	}
 
 	public List<Product> findByPrice(Price price){
-=======
-    public List<Product> findByProductType(ProductType productType){
+		return productRepository.findByPrice(price);
+	}
+	
+	public List<Product> findByProductType(ProductType productType){
 		return productRepository.findByProductType(productType);
 	}
 
-    public List<Product> findByDescription(Description description){
+  public List<Product> findByDescription(Description description){
 		return productRepository.findByDescription(description);
-	}
-
-    public List<Product> findBySubscriptionType(SubscriptionType subscriptionType){
-		return productRepository.findBySubscriptionType(subscriptionType);
-	}
-
-    public List<Product> findByPrice(Price price){
->>>>>>> refs/remotes/origin/master
-		return productRepository.findByPrice(price);
 	}
 }

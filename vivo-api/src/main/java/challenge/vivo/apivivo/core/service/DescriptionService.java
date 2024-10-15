@@ -2,7 +2,6 @@ package challenge.vivo.apivivo.core.service;
 
 import java.util.List;
 import java.util.UUID;
-import java.util.Locale.Category;
 
 import org.springframework.stereotype.Service;
 
@@ -37,7 +36,6 @@ public class DescriptionService {
 		descriptionRepository.delete(description);
 	}
 
-<<<<<<< HEAD
 	public Description findByUrl(String url){
 		return descriptionRepository.findByUrl(url);
 	}
@@ -45,13 +43,4 @@ public class DescriptionService {
 	public List<Description> findByCategory(Category category){
 		return descriptionRepository.findByCategory(category);
 	}
-=======
-	//métodos default
-	public List<Description> findByCategoria(Category category){
-		return descriptionRepository.findByCategoria(category);
-	}
-	public Description findByUrl(String url){
-		return descriptionRepository.findByUrl(url);
-	}
->>>>>>> refs/remotes/origin/master
 }
