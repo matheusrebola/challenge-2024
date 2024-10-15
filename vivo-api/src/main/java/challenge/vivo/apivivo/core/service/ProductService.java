@@ -37,15 +37,35 @@ public class ProductService {
 		productRepository.delete(product);
 	}
 
+<<<<<<< HEAD
+=======
+	//metodos default
+>>>>>>> refs/remotes/origin/master
 	public List<Product> findByProductName(String productName){
 		return productRepository.findByProductName(productName);
 	}
 
+<<<<<<< HEAD
 	public List<Product> findBySubscriptionType(SubscriptionType subscriptionType){
 		return productRepository.findBySubscriptionType(subscriptionType);
 	}
 
 	public List<Product> findByPrice(Price price){
+=======
+    public List<Product> findByProductType(ProductType productType){
+		return productRepository.findByProductType(productType);
+	}
+
+    public List<Product> findByDescription(Description description){
+		return productRepository.findByDescription(description);
+	}
+
+    public List<Product> findBySubscriptionType(SubscriptionType subscriptionType){
+		return productRepository.findBySubscriptionType(subscriptionType);
+	}
+
+    public List<Product> findByPrice(Price price){
+>>>>>>> refs/remotes/origin/master
 		return productRepository.findByPrice(price);
 	}
 }

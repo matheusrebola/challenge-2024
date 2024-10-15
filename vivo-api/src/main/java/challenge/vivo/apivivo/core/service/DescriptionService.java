@@ -6,6 +6,7 @@ import java.util.Locale.Category;
 
 import org.springframework.stereotype.Service;
 
+import challenge.vivo.apivivo.core.enums.Category;
 import challenge.vivo.apivivo.core.model.Description;
 import challenge.vivo.apivivo.core.repository.DescriptionRepository;
 import lombok.RequiredArgsConstructor;
@@ -36,6 +37,7 @@ public class DescriptionService {
 		descriptionRepository.delete(description);
 	}
 
+<<<<<<< HEAD
 	public Description findByUrl(String url){
 		return descriptionRepository.findByUrl(url);
 	}
@@ -43,4 +45,13 @@ public class DescriptionService {
 	public List<Description> findByCategory(Category category){
 		return descriptionRepository.findByCategory(category);
 	}
+=======
+	//métodos default
+	public List<Description> findByCategoria(Category category){
+		return descriptionRepository.findByCategoria(category);
+	}
+	public Description findByUrl(String url){
+		return descriptionRepository.findByUrl(url);
+	}
+>>>>>>> refs/remotes/origin/master
 }
