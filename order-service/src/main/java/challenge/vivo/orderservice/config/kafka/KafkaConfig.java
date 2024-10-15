@@ -1,4 +1,4 @@
-package challenge.vivo.descriptionservice.config.kafka;
+package challenge.vivo.orderservice.config.kafka;
 
 import lombok.RequiredArgsConstructor;
 import org.apache.kafka.clients.admin.NewTopic;
@@ -20,7 +20,7 @@ import java.util.Map;
 @Configuration
 @RequiredArgsConstructor
 public class KafkaConfig {
-  private static final Integer PARTITION_COUNT = 1;
+	private static final Integer PARTITION_COUNT = 1;
     private static final Integer REPLICA_COUNT = 1;
 
     @Value("${spring.kafka.bootstrap-servers}")
@@ -32,14 +32,11 @@ public class KafkaConfig {
     @Value("${spring.kafka.consumer.auto-offset-reset}")
     private String autoOffsetReset;
 
-    @Value("${spring.kafka.topic.orchestrator}")
-    private String orchestratorTopic;
+    @Value("${spring.kafka.topic.start-saga}")
+    private String startSagaTopic;
 
-    @Value("${spring.kafka.topic.price-success}")
-    private String priceSuccessTopic;
-
-    @Value("${spring.kafka.topic.price-fail}")
-    private String priceFailTopic;
+    @Value("${spring.kafka.topic.notify-ending}")
+    private String notifyEndingTopic;
 
     @Bean
     public ConsumerFactory<String, String> consumerFactory() {
@@ -83,16 +80,12 @@ public class KafkaConfig {
     }
 
     @Bean
-    public NewTopic orchestratorTopic() {
-        return buildTopic(orchestratorTopic);
-    }
-    @Bean
-    public NewTopic paymentSuccessTopic() {
-        return buildTopic(priceSuccessTopic);
+    public NewTopic startSagaTopic() {
+        return buildTopic(startSagaTopic);
     }
 
     @Bean
-    public NewTopic paymentFailTopic() {
-        return buildTopic(priceFailTopic);
+    public NewTopic notifyEndingTopic() {
+        return buildTopic(notifyEndingTopic);
     }
 }

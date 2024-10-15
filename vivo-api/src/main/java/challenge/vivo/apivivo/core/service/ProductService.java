@@ -5,6 +5,8 @@ import java.util.UUID;
 
 import org.springframework.stereotype.Service;
 
+import challenge.vivo.apivivo.core.enums.SubscriptionType;
+import challenge.vivo.apivivo.core.model.Price;
 import challenge.vivo.apivivo.core.model.Product;
 import challenge.vivo.apivivo.core.repository.ProductRepository;
 import lombok.RequiredArgsConstructor;
@@ -33,5 +35,17 @@ public class ProductService {
 	
 	public void delete(Product product) {
 		productRepository.delete(product);
+	}
+
+	public List<Product> findByProductName(String productName){
+		return productRepository.findByProductName(productName);
+	}
+
+	public List<Product> findBySubscriptionType(SubscriptionType subscriptionType){
+		return productRepository.findBySubscriptionType(subscriptionType);
+	}
+
+	public List<Product> findByPrice(Price price){
+		return productRepository.findByPrice(price);
 	}
 }

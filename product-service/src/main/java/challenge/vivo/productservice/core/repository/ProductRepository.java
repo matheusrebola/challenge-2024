@@ -9,4 +9,5 @@ import java.util.List;
 public interface ProductRepository extends MongoRepository<Product, String> {
     // Encontra produtos cujo campo lastAccessed é anterior à data fornecida
     List<Product> findByLastAccessedBefore(LocalDateTime dateTime);
+    Product findByMoreSearchs();
 }

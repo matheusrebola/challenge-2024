@@ -3,8 +3,8 @@ package challenge.vivo.apivivo.core.model;
 import java.util.List;
 import java.util.UUID;
 
-import challenge.vivo.descriptionservice.core.enums.ProductType;
-import challenge.vivo.descriptionservice.core.enums.SubscriptionType;
+import challenge.vivo.apivivo.core.enums.ProductType;
+import challenge.vivo.apivivo.core.enums.SubscriptionType;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;
@@ -19,12 +19,10 @@ public record Product(
     @Id @GeneratedValue(strategy = GenerationType.UUID) UUID id,
     String productName,
     ProductType ProductType,
-    @ManyToOne // Muitos produtos podem compartilhar uma mesma descrição
-    Description description,
+    @ManyToOne Description description, // Muitos produtos podem compartilhar uma mesma descrição
     SubscriptionType subscriptionType,
     @OneToMany(mappedBy = "product", cascade = CascadeType.ALL) // Um produto pode ter vários preços
     List<Price> prices, // Usando uma lista de preços
-    @ElementCollection // Para armazenar múltiplas tags como uma lista de strings
-    List<String> tags
+    @ElementCollection List<String> tags// Para armazenar múltiplas tags como uma lista de strings
 ) {}
 

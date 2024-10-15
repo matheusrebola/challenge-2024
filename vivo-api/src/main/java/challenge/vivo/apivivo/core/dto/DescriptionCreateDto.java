@@ -1,6 +1,6 @@
 package challenge.vivo.apivivo.core.dto;
 
-import challenge.vivo.descriptionservice.core.enums.Category;
+import challenge.vivo.apivivo.core.enums.Category;
 
 public record DescriptionCreateDto(
   String text,

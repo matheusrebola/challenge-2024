@@ -5,7 +5,9 @@ import java.util.UUID;
 
 import org.springframework.stereotype.Service;
 
+import challenge.vivo.apivivo.core.enums.PriceType;
 import challenge.vivo.apivivo.core.model.Price;
+import challenge.vivo.apivivo.core.model.Product;
 import challenge.vivo.apivivo.core.repository.PriceRepository;
 import lombok.RequiredArgsConstructor;
 
@@ -27,4 +29,15 @@ public class PriceService {
 		return priceRepository.findById(id).orElse(null);
 	}
 
+	public List<Price> findByPriceType(PriceType priceType){
+		return priceRepository.findByPriceType(priceType);
+	}
+
+	public List<Price> findByRecurringPeriod(String recurringPeriod){
+		return priceRepository.findByRecurringPeriod(recurringPeriod);
+	}
+
+	public List<Price> findByProduct(Product product){
+		return priceRepository.findByProduct(product);
+	}
 }

@@ -19,5 +19,6 @@ public record Product(
     SubscriptionType subscriptionType,
     List<String> tags,
     List<String> priceIds, // Lista de IDs de preços para este produto
-    LocalDateTime lastAccessed   
+    LocalDateTime lastAccessed,
+    Short searchs
 ) {}

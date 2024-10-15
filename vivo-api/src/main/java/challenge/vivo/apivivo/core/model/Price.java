@@ -12,12 +12,10 @@ import jakarta.persistence.ManyToOne;
 @Entity
 public record Price(
     @Id @GeneratedValue(strategy = GenerationType.UUID) UUID id,
-    @ManyToOne // Relacionamento de muitos preços para uma descrição
-    Description description,
+    @ManyToOne Description description, // Relacionamento de muitos preços para uma descrição
     PriceType priceType,
     String recurringPeriod,
-    @ManyToOne // Muitos preços podem estar associados a um produto
-    Product product
+    @ManyToOne Product product // Muitos preços podem estar associados a um produto
 ) 
 {}
 
