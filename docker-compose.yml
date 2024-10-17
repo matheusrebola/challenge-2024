@@ -1,67 +1,15 @@
 version: '3.8'
 
 services:
-  
-  description-db:
-    image: mongo:latest
-    container_name: description-db
+  zookeeper:
+    image: confluentinc/cp-kafka:latest
+    container_name: zookeeper-container
     restart: always
-    networks:
-      - orchestrator-saga
     environment:
-      - MONGO_INITDB_ROOT_USERNAME=admin
-      - MONGO_INITDB_ROOT_PASSWORD=123456
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
     ports:
-      - 27010:27017  # Porta corrigida
-
-  product-db:
-    image: mongo:latest
-    container_name: product-db
-    restart: always
-    networks:
-      - orchestrator-saga
-    environment:
-      - MONGO_INITDB_ROOT_USERNAME=admin
-      - MONGO_INITDB_ROOT_PASSWORD=123456
-    ports:
-      - 27011:27017  # Porta corrigida
-
-  price-db:
-    image: mongo:latest
-    container_name: price-db
-    restart: always
-    networks:
-      - orchestrator-saga
-    environment:
-      - MONGO_INITDB_ROOT_USERNAME=admin
-      - MONGO_INITDB_ROOT_PASSWORD=123456
-    ports:
-      - 27012:27017  # Porta corrigida
-
-  order-db:
-    image: mongo:latest
-    container_name: order-db
-    restart: always
-    networks:
-      - orchestrator-saga
-    environment:
-      - MONGO_INITDB_ROOT_USERNAME=admin
-      - MONGO_INITDB_ROOT_PASSWORD=123456
-    ports:
-      - 27013:27017  # Porta corrigida
-
-  vivo-db:
-    container_name: vivo-db
-    image: postgres:latest
-    environment:
-      POSTGRES_DB: vivo-db
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
-      PGDATA: /data/postgres
-    networks:
-      - orchestrator-saga
-    ports:
-      - "5432:5432"
+      - "2181:2181"
 
   kafka:
     container_name: kafka
@@ -69,7 +17,7 @@ services:
     restart: "no"
     ports:
       - "2181:2181"
-      - "9092:9092"
+      - "9093:9092"
     networks:
       - orchestrator-saga
     environment:
@@ -105,102 +53,9 @@ services:
     depends_on:
       - kafka
 
-  order-service:
-    build: './order-service'
-    container_name: order-service
-    depends_on:
-      - order-db
-      - kafka
-    networks:
-      - orchestrator-saga
-    environment:
-      - KAFKA_BROKER=kafka:29092
-      - MONGO_DB_URI=mongodb://admin:123456@order-db:27013
-    ports:
-      - 3000:3000
-
-  auth-service:
-    build: './auth-service'
-    container_name: auth-service
-    depends_on:
-      - kafka
-    networks:
-      - orchestrator-saga
-    environment:
-      - KAFKA_BROKER=kafka:29092
-    ports:
-      - 8090:8090
-
-  orchestrator-service:
-    build: './orchestrator-service'
-    container_name: orchestrator-service
-    depends_on:
-      - kafka
-    networks:
-      - orchestrator-saga
-    environment:
-      - KAFKA_BROKER=kafka:29092
-    ports:
-      - 8085:8085
-
-  product-service:
-    build: './product-service'
-    container_name: product-service
-    depends_on:
-      - product-db
-      - kafka
-    networks:
-      - orchestrator-saga
-    environment:
-      - KAFKA_BROKER=kafka:29092
-      - MONGO_DB_URI=mongodb://admin:123456@product-db:27011
-    ports:
-      - 8093:8093
-
-  price-service:
-    build: './price-service'
-    container_name: price-service
-    depends_on:
-      - price-db
-      - kafka
-    networks:
-      - orchestrator-saga
-    environment:
-      - KAFKA_BROKER=kafka:29092
-      - MONGO_DB_URI=mongodb://admin:123456@price-db:27012
-    ports:
-      - 8091:8091
-
-  description-service:
-    build: './description-service'
-    container_name: description-service
-    depends_on:
-      - description-db
-      - kafka
-    networks:
-      - orchestrator-saga
-    environment:
-      - KAFKA_BROKER=kafka:29092
-      - MONGO_DB_URI=mongodb://admin:123456@description-db:27010
-    ports:
-      - 8092:8092
-
-  vivo-api:
-    build: './vivo-api'
-    container_name: vivo-api
-    depends_on:
-      - vivo-db
-    networks:
-      - orchestrator-saga
-    environment:
-      - KAFKA_BROKER=kafka:29092
-      - DB_HOST=vivo-db
-      - DB_PORT=5432
-      - DB_NAME=vivo-db
-      - DB_USER=postgres
-      - DB_PASSWORD=postgres
-    ports:
-      - 8070:8070
+volumes:
+  mongo_data:
+  kafka_data:
 
 networks:
   orchestrator-saga:
