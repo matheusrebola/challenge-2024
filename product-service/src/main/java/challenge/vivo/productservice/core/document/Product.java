@@ -11,7 +11,7 @@ import challenge.vivo.productservice.core.enums.SubscriptionType;
 
 @Document
 public record Product(
-  @Id String id,
+    @Id String id,
     String productName,
     ProductType productType,
     String descriptionId,  // Referência ao ID do microserviço de descrição
