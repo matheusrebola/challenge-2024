@@ -3,18 +3,24 @@ server:
 
 spring:
   kafka:
-    bootstrap-servers: ${KAFKA_BROKER:localhost:9092}
-    topic:
-      start-saga: start-saga
-      notify-ending: notify-ending
+    bootstrap-servers: localhost:9092
     consumer:
-      group-id: order-group
-      auto-offset-reset: latest
+      group-id: my-consumer-group
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    topic:
+      orchestrator: description-topic
 
   data:
     mongodb:
-      database: admin
-      uri: ${MONGO_DB_URI:mongodb://admin:123456@localhost:27010}
+      uri: mongodb://description:description@mongodb:27010/description-db
+
+jpa:
+  show-sql: true
 
 logging:
   level:
