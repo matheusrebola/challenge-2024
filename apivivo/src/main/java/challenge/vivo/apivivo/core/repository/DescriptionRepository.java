@@ -1,5 +1,9 @@
 package challenge.vivo.apivivo.core.repository;
 
-public interface DescriptionRepository {
+import java.util.UUID;
+import challenge.vivo.apivivo.core.entities.Description;
+
+@Repository
+public interface DescriptionRepository extends JpaRepository<Description, UUID>{
 
 }
