@@ -1,15 +1,27 @@
 version: '3.8'
 
 services:
+  postgres:
+    image: postgres:latest
+    container_name: postgres-container
+    restart: always
+    environment:
+      POSTGRES_USER: Wizardry
+      POSTGRES_PASSWORD: MaosMacias2@
+      POSTGRES_DB: vivoapi
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
   mariadb:
     image: mariadb:latest
     container_name: mariadb-container
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: microservices
-      MYSQL_USER: root
-      MYSQL_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: senhaGigante2@
+      MYSQL_DATABASE: vivo
+      MYSQL_USER: wizardry
+      MYSQL_PASSWORD: maosMacias2@
     ports:
       - "3306:3306"
     volumes:
