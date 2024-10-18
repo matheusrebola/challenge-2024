@@ -16,7 +16,6 @@ import challenge.vivo.apivivo.core.dtos.PriceCreateDto;
 import challenge.vivo.apivivo.core.dtos.PriceDto;
 import challenge.vivo.apivivo.core.entities.Price;
 import challenge.vivo.apivivo.core.mapper.PriceMapper;
-import challenge.vivo.apivivo.core.repository.PriceRepository;
 import challenge.vivo.apivivo.core.service.PriceService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -25,13 +24,12 @@ import lombok.RequiredArgsConstructor;
 @RequestMapping("/price")
 @RequiredArgsConstructor
 public class PriceController {
-  private final PriceRepository priceRepository;
   private final PriceMapper priceMapper;
   private final PriceService priceService;
 
   @GetMapping
   public ResponseEntity<List<PriceDto>> getAll(){
-    List<PriceDto> resultList = priceRepository.findAll().stream().map(priceMapper::map).collect(Collectors.toList());
+    List<PriceDto> resultList = priceService.findAll().stream().map(priceMapper::map).collect(Collectors.toList());
     return new ResponseEntity<>(resultList, HttpStatus.OK);
   }
 
