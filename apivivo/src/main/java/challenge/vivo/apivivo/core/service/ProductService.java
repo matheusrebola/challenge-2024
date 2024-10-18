@@ -25,4 +25,9 @@ public class ProductService {
     public Product saveProduct(Product product){
         return productRepository.save(product);
     }
+
+    public boolean existsById(UUID id){
+        return productRepository.existsById(id);
+    }
+
 }
