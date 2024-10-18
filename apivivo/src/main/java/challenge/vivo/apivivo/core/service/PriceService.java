@@ -22,7 +22,11 @@ public class PriceService {
         return priceRepository.findById(id).orElse(null);
     }
 
-    public Price savPrice(Price price){
+    public Price savePrice(Price price){
         return priceRepository.save(price);
+    }
+
+    public boolean exists(UUID id){
+        return priceRepository.existsById(id);
     }
 }
