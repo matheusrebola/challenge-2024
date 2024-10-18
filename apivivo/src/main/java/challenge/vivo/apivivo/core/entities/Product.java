@@ -1,6 +1,13 @@
 package challenge.vivo.apivivo.core.entities;
 
+import java.time.LocalDateTime;
+import java.util.List;
 import java.util.UUID;
+
+import challenge.vivo.apivivo.core.entities.enums.ProductType;
+import challenge.vivo.apivivo.core.entities.enums.SubscriptionType;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 
 @Entity
 public record Product(
