@@ -10,7 +10,7 @@ services:
       MONGO_INITDB_ROOT_PASSWORD: vivoservice
       MONGO_INITDB_DATABASE: vivoservice-db
     ports:
-      - "27011:27017"
+      - "27012:27017"
     volumes:
       - mongo_data:/data/db
 volumes:
