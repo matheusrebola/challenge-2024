@@ -1,10 +1,10 @@
-package challenge.vivo.productservice;
+package challenge.vivo.changedatacaptureservice;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ProductServiceApplicationTests {
+class ChangeDataCaptureServiceApplicationTests {
 
 	@Test
 	void contextLoads() {

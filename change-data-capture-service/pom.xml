@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>challenge.vivo</groupId>
-	<artifactId>description-service</artifactId>
+	<artifactId>change-data-capture-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>description-service</name>
+	<name>change-data-capture-service</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
 	<licenses>

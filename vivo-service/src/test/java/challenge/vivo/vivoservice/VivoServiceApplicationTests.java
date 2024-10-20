@@ -1,10 +1,10 @@
-package challenge.vivo.description_service;
+package challenge.vivo.vivoservice;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class DescriptionServiceApplicationTests {
+class VivoServiceApplicationTests {
 
 	@Test
 	void contextLoads() {
