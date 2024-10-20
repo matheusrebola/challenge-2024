@@ -1,0 +1,23 @@
+server:
+  port: 8092
+
+spring:
+  kafka:
+    bootstrap-servers: ${KAFKA_BROKER:localhost:9092}
+    topic:
+      orchestrator: orchestrator
+      description-success: search-success
+      description-fail: search-fail
+    consumer:
+      group-id: product-group
+      auto-offset-reset: latest
+
+  data:
+    mongodb:
+      uri: mongodb://search:search@mongodb:27010/search-db
+
+logging:
+  level:
+    org:
+      apache:
+        kafka: OFF

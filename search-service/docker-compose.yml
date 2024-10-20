@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: search-mongodb
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: search
+      MONGO_INITDB_ROOT_PASSWORD: search
+      MONGO_INITDB_DATABASE: search-db
+    ports:
+      - "27010:27017"
+    volumes:
+      - mongo_data:/data/db
+volumes:
+  mongo_data:
