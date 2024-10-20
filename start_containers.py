@@ -4,11 +4,10 @@ import subprocess
 # Diretórios com os arquivos docker-compose.yml
 SERVICES = [
     ".",
-    "description-service",
-    "orchestrator-service",
     "order-service",
-    "price-service",
-    "product-service"
+    "orchestrator-service",
+    "product-service",
+    "chnage-data-capture-service"
 ]
 
 def is_container_running(service_name):

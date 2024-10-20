@@ -2,11 +2,10 @@
 
 # Lista dos diretórios de microserviços
 SERVICES=(
-    "description-service"
-    "orchestrator-service"
     "order-service"
-    "price-service"
-    "product-service"
+    "orchestrator-service"
+    "vivo-service"
+    "change-data-capture-service"
 )
 
 # Função para buildar e criar imagem Docker para cada serviço
