@@ -3,39 +3,20 @@ server:
 
 spring:
   kafka:
-    bootstrap-servers: ${KAFKA_BROKER:localhost:9092} # Altere para o endereço do Redpanda, se necessário
+    bootstrap-servers: ${KAFKA_BROKER:localhost:9092}
     topic:
       start-saga: start-saga
       notify-ending: notify-ending
     consumer:
       group-id: order-group
       auto-offset-reset: latest
-    producer:
-      key-serializer: org.apache.kafka.common.serialization.StringSerializer
-      value-serializer: org.apache.kafka.common.serialization.StringSerializer
 
-
-  datasource:
-    url: jdbc:h2:mem:testdb
-    driver-class-name: org.h2.Driver
-    username: sa
-    password: password
-    platform: h2
-    initialization-mode: always
-
-  h2:
-    console:
-      enabled: true
-      path: /h2-console
+ data:
+    mongodb:
+      uri: mongodb://order:order@mongodb:27011/order-db
 
 logging:
   level:
     org:
       apache:
         kafka: OFF
-
-springdoc:
-  swagger-ui:
-    path: /swagger-ui.html
-  api-docs:
-    path: /v3/api-docs
