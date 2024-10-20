@@ -3,7 +3,7 @@ version: '3.8'
 services:
   mongodb:
     image: mongo:latest
-    container_name: mongodb-order-db
+    container_name: order-mongodb
     restart: always
     environment:
       MONGO_INITDB_ROOT_USERNAME: order
@@ -12,6 +12,6 @@ services:
     ports:
       - "27011:27017"
     volumes:
-      - mongo_data:/data/db
+      - mongo_data:/data/order-db
 volumes:
   mongo_data:
