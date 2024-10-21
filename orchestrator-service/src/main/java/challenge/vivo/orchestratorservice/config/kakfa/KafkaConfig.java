@@ -97,33 +97,33 @@ public class KafkaConfig {
     }
 
     @Bean
-    public NewTopic productValidationSuccessTopic() {
-        return buildTopic(PRODUCT_SUCCESS.getTopic());
+    public NewTopic itemSuccessTopic() {
+        return buildTopic(ITEM_SUCCESS.getTopic());
     }
 
     @Bean
-    public NewTopic productValidationFailTopic() {
-        return buildTopic(PRODUCT_FAIL.getTopic());
+    public NewTopic itemFailTopic() {
+        return buildTopic(ITEM_FAIL.getTopic());
     }
 
     @Bean
-    public NewTopic paymentSuccessTopic() {
-        return buildTopic(PRICE_SUCCESS.getTopic());
+    public NewTopic searchSuccessTopic() {
+        return buildTopic(SEARCH_SUCCESS.getTopic());
     }
 
     @Bean
-    public NewTopic paymentValidationFailTopic() {
-        return buildTopic(PRICE_FAIL.getTopic());
+    public NewTopic searchFailTopic() {
+        return buildTopic(SEARCH_FAIL.getTopic());
     }
 
     @Bean
-    public NewTopic inventoryValidationSuccessTopic() {
-        return buildTopic(DESCRIPTION_SUCCESS.getTopic());
+    public NewTopic updateSuccessTopic() {
+        return buildTopic(UPDATE_SUCCESS.getTopic());
     }
 
     @Bean
-    public NewTopic inventoryValidationFailTopic() {
-        return buildTopic(DESCRIPTION_FAIL.getTopic());
+    public NewTopic updateFailTopic() {
+        return buildTopic(UPDATE_FAIL.getTopic());
     }
     
 }
