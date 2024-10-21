@@ -11,12 +11,12 @@ public enum ETopics {
     BASE_ORCHESTRATOR("orchestrator"),
     FINISH_SUCCESS("finish-success"),
     FINISH_FAIL("finish-fail"),
-    PRODUCT_SUCCESS("product-success"),
-    PRODUCT_FAIL("product-fail"),
-    PRICE_SUCCESS("price-success"),
-    PRICE_FAIL("price-fail"),
-    DESCRIPTION_SUCCESS("description-success"),
-    DESCRIPTION_FAIL("description-fail"),
+    ITEM_SUCCESS("item-success"),
+    ITEM_FAIL("item-fail"),
+    SEARCH_SUCCESS("search-success"),
+    SEARCH_FAIL("search-fail"),
+    UPDATE_SUCCESS("update-success"),
+    UPDATE_FAIL("update-fail"),
     NOTIFY_ENDING("notify-ending");
 
     private final String topic;
