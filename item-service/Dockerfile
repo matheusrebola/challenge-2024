@@ -1,4 +1,4 @@
 FROM openjdk:17-alpine
 COPY build/libs/*.jar app.jar
-EXPOSE 8093
+EXPOSE 8091
 ENTRYPOINT ["java", "-jar", "item.jar"]

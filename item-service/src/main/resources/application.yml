@@ -1,5 +1,5 @@
 server:
-  port: 8093
+  port: 8091
 
 spring:
   kafka:
@@ -14,7 +14,7 @@ spring:
 
   data:
     mongodb:
-      uri: mongodb://product:product@mongodb:27012/product-db
+      uri: mongodb://item:item@mongodb:27011/item-db
 
 logging:
   level:
