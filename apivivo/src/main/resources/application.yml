@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:mysql://mysql-container:3306/vivo
+    url: jdbc:mysql://localhost:3306/vivo
     username: wizardry
     password: maosMacias2@
     driver-class-name: com.mysql.cj.jdbc.Driver
