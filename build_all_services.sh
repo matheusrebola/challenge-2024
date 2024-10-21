@@ -4,8 +4,8 @@
 SERVICES=(
     "order-service"
     "orchestrator-service"
-    "vivo-service"
-    "change-data-capture-service"
+    "item-service"
+    "search-service"
 )
 
 # Função para buildar e criar imagem Docker para cada serviço
