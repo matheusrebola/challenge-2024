@@ -1,4 +1,4 @@
 FROM openjdk:17-alpine
 COPY build/libs/*.jar app.jar
-EXPOSE 8085
+EXPOSE 8090
 ENTRYPOINT ["java", "-jar", "orchestrator.jar"]
