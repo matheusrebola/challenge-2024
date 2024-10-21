@@ -13,7 +13,7 @@ spring:
 
   data:
     mongodb:
-      uri: mongodb://order:order@mongodb:27011/order-db
+      uri: mongodb://order:order@mongodb:27010/order-db
 
 logging:
   level:
