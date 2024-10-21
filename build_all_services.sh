@@ -6,6 +6,7 @@ SERVICES=(
     "orchestrator-service"
     "item-service"
     "search-service"
+    "update-service"
 )
 
 # Função para buildar e criar imagem Docker para cada serviço
