@@ -4,6 +4,7 @@ import subprocess
 # Diretórios com os arquivos docker-compose.yml
 SERVICES = [
     ".",
+    "apivivo",
     "order-service",
     "item-service",
     "search-service",
