@@ -2,7 +2,7 @@ package challenge.vivo.orchestratorservice.core.enums;
 
 public enum EEventSource {
     ORCHESTRATOR,
-    PRODUCT_SERVICE,
-    PRICE_SERVICE,
-    DESCRIPTION_SERVICE
+    ITEM_SERVICE,
+    SEARCH_SERVICE,
+    UPDATE_SERVICE
 }
