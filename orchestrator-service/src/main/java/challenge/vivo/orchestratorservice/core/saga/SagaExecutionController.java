@@ -52,6 +52,8 @@ public class SagaExecutionController {
         switch (event.getStatus()) {
             case SUCCESS -> log.info("### CURRENT SAGA: {} | SUCCESS | NEXT TOPIC {} | {}",
                 source, topic, sagaId);
+            case NOT_FOUND -> log.info("### CURRENT SAGA: {} | ITEM NOT FOUND IN NOSQL DATABASE | NEXT TOPIC {} | {}",
+                source, topic, sagaId);
             case ROLLBACK_PENDING -> log.info("### CURRENT SAGA: {} | SENDING TO ROLLBACK CURRENT SERVICE | NEXT TOPIC {} | {}",
                 source, topic, sagaId);
             case FAIL -> log.info("### CURRENT SAGA: {} | SENDING TO ROLLBACK PREVIOUS SERVICE | NEXT TOPIC {} | {}",
