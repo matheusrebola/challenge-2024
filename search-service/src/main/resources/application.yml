@@ -14,7 +14,7 @@ spring:
 
   data:
     mongodb:
-      uri: mongodb://search:search@mongodb:27010/search-db
+      uri: mongodb://search:search@mongodb:27012/search-db
 
 logging:
   level:
