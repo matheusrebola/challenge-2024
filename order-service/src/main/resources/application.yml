@@ -11,7 +11,7 @@ spring:
       group-id: order-group
       auto-offset-reset: latest
 
- data:
+  data:
     mongodb:
       uri: mongodb://order:order@mongodb:27011/order-db
 
@@ -19,4 +19,4 @@ logging:
   level:
     org:
       apache:
-        kafka: ON
+        kafka: OFF
