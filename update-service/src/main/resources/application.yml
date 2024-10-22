@@ -1,5 +1,5 @@
 server:
-  port: 8093
+  port: 48093
 
 spring:
   kafka:
@@ -14,7 +14,7 @@ spring:
 
   data:
     mongodb:
-      uri: mongodb://${USER_NAME:update}:&{USER_PASS:update}@mongodb:${DB_PORT:57013}/${DB_NAME:update-db}
+      uri: mongodb://${USER_NAME:update}:${USER_PASS:update}@mongodb:${DB_PORT:57013}/${DB_NAME:update-db}
 
 logging:
   level:
