@@ -10,7 +10,7 @@ services:
       MONGO_INITDB_ROOT_PASSWORD: order
       MONGO_INITDB_DATABASE: order-db
     ports:
-      - "27010:27017"
+      - "57010:27017"
     volumes:
       - mongo_data:/data/db
 volumes:

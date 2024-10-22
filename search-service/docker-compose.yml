@@ -10,7 +10,7 @@ services:
       MONGO_INITDB_ROOT_PASSWORD: search
       MONGO_INITDB_DATABASE: search-db
     ports:
-      - "27012:27017"
+      - "57012:27017"
     volumes:
       - mongo_data:/data/db
 volumes:

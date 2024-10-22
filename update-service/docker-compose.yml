@@ -10,7 +10,7 @@ services:
       MONGO_INITDB_ROOT_PASSWORD: update
       MONGO_INITDB_DATABASE: update-db
     ports:
-      - "27013:27017"
+      - "57013:27017"
     volumes:
       - mongo_data:/data/db
 volumes:

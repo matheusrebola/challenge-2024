@@ -3,7 +3,7 @@ server:
 
 spring:
   kafka:
-    bootstrap-servers: ${KAFKA_BROKER:localhost:9092}
+    bootstrap-servers: ${KAFKA_BROKER:localhost:59092}
     topic:
       orchestrator: orchestrator
       description-success: search-success
@@ -14,7 +14,7 @@ spring:
 
   data:
     mongodb:
-      uri: mongodb://item:item@mongodb:27011/item-db
+      uri: mongodb://${USER_NAME:item}:${USER_PASS:item}@mongodb:${DB_PORT:57011}/${DB_NAME:item-db}
 
 logging:
   level:

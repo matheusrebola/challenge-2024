@@ -10,7 +10,7 @@ services:
       ZOOKEEPER_CLIENT_PORT: 2181
       ZOOKEEPER_TICK_TIME: 2000
     ports:
-      - "2181:2181"
+      - "52181:2181"
     networks:
       - orchestrator-saga
 
@@ -19,7 +19,7 @@ services:
     image: bitnami/kafka:latest
     restart: always
     ports:
-      - "9092:9092"
+      - "59092:9092"
     networks:
       - orchestrator-saga
     environment:
@@ -41,7 +41,7 @@ services:
     entrypoint: /bin/sh
     command: -c "echo \"$$CONSOLE_CONFIG_FILE\" > /tmp/config.yml; /app/console"
     ports:
-      - "8081:8080"
+      - "58081:8080"
     networks:
       - orchestrator-saga
     environment:
