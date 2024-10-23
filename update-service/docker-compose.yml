@@ -17,5 +17,7 @@ services:
       - "57013:27017"
     volumes:
       - mongo_data:/data/db
+    networks:
+      - orchestrator-saga
 volumes:
   mongo_data:
