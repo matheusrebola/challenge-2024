@@ -1,5 +1,9 @@
 version: '3.8'
 
+networks:
+  orchestrator-saga:
+    driver: bridge
+    
 services:
   zookeeper:
     image: bitnami/zookeeper:latest
@@ -27,7 +31,7 @@ services:
       KAFKA_CFG_ADVERTISED_LISTENERS: "INTERNAL://kafka:29092,EXTERNAL://localhost:9092"
       KAFKA_CFG_LISTENER_SECURITY_PROTOCOL_MAP: "INTERNAL:PLAINTEXT,EXTERNAL:PLAINTEXT"
       KAFKA_CFG_INTER_BROKER_LISTENER_NAME: "INTERNAL"
-      KAFKA_ZOOKEEPER_CONNECT: "zookeeper-container:2181"
+      KAFKA_ZOOKEEPER_CONNECT: "zookeeper-container:52181"
       ALLOW_PLAINTEXT_LISTENER: "yes"
     volumes:
       - ./data/kafka/data:/var/lib/kafka/data
@@ -55,6 +59,3 @@ services:
 volumes:
   kafka_data:
 
-networks:
-  orchestrator-saga:
-    driver: bridge

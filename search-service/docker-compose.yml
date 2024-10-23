@@ -1,5 +1,9 @@
 version: '3.8'
 
+networks:
+  orchestrator-saga:
+    driver: bridge
+
 services:
   mongodb:
     image: mongo:latest
