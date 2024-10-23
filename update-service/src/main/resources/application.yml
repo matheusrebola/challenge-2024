@@ -6,10 +6,10 @@ spring:
     bootstrap-servers: ${KAFKA_BROKER:localhost:59092}
     topic:
       orchestrator: orchestrator
-      description-success: search-success
-      description-fail: search-fail
+      update-success: update-success
+      update-fail: update-fail
     consumer:
-      group-id: product-group
+      group-id: update-group
       auto-offset-reset: latest
 
   data:
