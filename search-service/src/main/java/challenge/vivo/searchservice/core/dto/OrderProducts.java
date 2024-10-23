@@ -1,5 +1,12 @@
 package challenge.vivo.searchservice.core.dto;
 
-public record OrderProducts() {
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class OrderProducts {
+      private Product product;
 }
