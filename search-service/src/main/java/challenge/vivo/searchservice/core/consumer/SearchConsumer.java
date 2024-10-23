@@ -21,6 +21,8 @@ public class SearchConsumer {
   )
   public void consumeSuccessEvent(String payload) {
     log.info("Receiving success event {} from search-success topic", payload);
+    var event = jsonUtil.toEvent(payload);
+    searchService.updateSearch(event);
   }
 
   @KafkaListener(
@@ -29,5 +31,7 @@ public class SearchConsumer {
   )
   public void consumeFailEvent(String payload) {
     log.info("Receiving rollback event {} from search-fail topic", payload);
+    var event = jsonUtil.toEvent(payload);
+    searchService.rollbackSearch(event);
   }
 }
